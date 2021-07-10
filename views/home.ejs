@@ -1,5 +1,36 @@
-<ul>
-  <%for(let i=0;i<content.length;i++){ %>
-   <Li><a href="/continent/<%=content[i].continent%>"><%=content[i].continent%></a></Li>
-  <%}%>
-</ul>
+<%- include('partials/header'); -%>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><h2>Numbers by Continents</h2></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <%for(let i=0;i<content.length;i++){ %>
+    <tr>
+      
+      <td><h3><a href="/continent/<%=content[i].continent%>"><%=content[i].continent%></a></h3> </td>
+    </tr>
+     <%}%>
+  </tbody>
+</table>
+    </div>
+    <div class="col">
+      <h2>Search by country name</h2>
+      <form action="/" method="POST">
+      <input type="text" name="country">
+      <button type="submit">Fetch me the numbers</button>
+      </form>
+    </div>
+  </div>
+ 
+</div>
+
+
+
+<%- include('partials/footer'); -%>
