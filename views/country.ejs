@@ -1,4 +1,53 @@
 <%- include('partials/header'); -%>
 <p>for displaying countries</p>
-
+<img src="<%=countrydata.countryInfo.flag%>" alt="" />
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">Details</th>
+            <th scope="col">Counts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-warning">
+            <th scope="row">Total Cases</th>
+            <td><%=countrydata.cases%></td>
+          </tr>
+          <tr class="table-warning">
+            <th scope="row">Today cases</th>
+            <td><%=countrydata.todayCases%></td>
+          </tr>
+          <tr class="table-danger">
+            <th scope="row">Total deaths</th>
+            <td><%=countrydata.deaths%></td>
+          </tr>
+          <tr class="table-danger">
+            <th scope="row">Today deaths</th>
+            <td><%=countrydata.todayDeaths%></td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">Total recovery</th>
+            <td><%=countrydata.recovered%></td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">Today recovered</th>
+            <td><%=countrydata.todayRecovered%></td>
+          </tr>
+          <tr class="table-info">
+            <th scope="row">Active cases</th>
+            <td><%=countrydata.active%></td>
+          </tr>
+          <tr class="table-info">
+            <th scope="row">Critical cases</th>
+            <td><%=countrydata.critical%></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
 <%- include('partials/footer'); -%>
