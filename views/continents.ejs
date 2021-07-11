@@ -1,1 +1,59 @@
-<p><%=continentData.updated%></p>
+<%- include('partials/header'); -%>
+
+<h1>Conintent-wise Numbers</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1><%=continentData.continent%></h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Details</th>
+            <th scope="col">Numbers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-warning">
+            <th scope="row">Total Cases</th>
+            <td><%=continentData.cases%></td>
+          </tr>
+          <tr class="table-warning">
+            <th scope="row">Today Cases</th>
+            <td><%=continentData.todayCases%></td>
+          </tr>
+          <tr class="table-danger">
+            <th scope="row">Total Deaths</th>
+            <td colspan="2"><%=continentData.deaths%></td>
+          </tr>
+          <tr class="table-danger">
+            <th scope="row">Today Deaths</th>
+            <td><%=continentData.todayDeaths%></td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">Total Recovered</th>
+            <td><%=continentData.recovered%></td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">Active Cases</th>
+            <td><%=continentData.active%></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+<h1>Countries</h1>
+    
+      
+     <%for(let i=0;i<continentData.countries.length;i++){%>
+      <p><a href="country/<%=continentData.countries[i]%>"><p><%=continentData.countries[i]%></p></a></p>
+     <%}%>
+         
+
+
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer'); -%>

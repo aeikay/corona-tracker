@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/continent/:cont', (req, res) => {
-  console.log(req.params.cont)
+  // console.log(req.params.cont)
   for (let i = 0; i < data.length; i++) {
     if (data[i].continent === req.params.cont) {
       console.log(data[i].updated)
@@ -52,13 +52,27 @@ app.get('/continent/:cont', (req, res) => {
     }
   }
 })
+
+app.get('/continent/country/:country', (req, res) => {
+  for (let i = 0; i < countrydata.length; i++) {
+    if (
+      _.lowerCase(countrydata[i].country) === _.lowerCase(req.params.country)
+    ) {
+      res.render('country', { countrydata: countrydata[i] })
+      break
+    } else if (i === countrydata.length - 1) {
+      res.render('countryerror.ejs', { wrongCountryName: countryName })
+    }
+  }
+})
+
 app.post('/', (req, res) => {
   let countryName = req.body.country
 
   for (let i = 0; i < countrydata.length; i++) {
     if (_.lowerCase(countrydata[i].country) === _.lowerCase(countryName)) {
-      console.log(countrydata[i])
-      console.log(countrydata[i].countryInfo.flag)
+      // console.log(countrydata[i])
+      // console.log(countrydata[i].countryInfo.flag)
       res.render('country', { countrydata: countrydata[i] })
       break
     } else if (i === countrydata.length - 1) {
