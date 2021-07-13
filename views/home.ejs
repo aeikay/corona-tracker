@@ -3,6 +3,45 @@
 <div class="container">
   <div class="row">
     <div class="col">
+<div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+  <img src="/images/covid-19.png" class="card-img-top" alt="">
+  <div class="card-body">
+   
+    <p class="card-text"><%=worlddata.cases%></p>
+  </div>
+</div>
+    </div>
+<div class="col">
+  <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+  <div class="card-header">Active</div>
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-virus-slash"></i></h5>
+    <p class="card-text"><%=worlddata.active%></p>
+  </div>
+  </div>
+</div>
+
+<div class="col"> <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+  <div class="card-header">Recovered</div>
+  <div class="card-body">
+    <h5 class="card-title">Success card title</h5>
+    <p class="card-text"><%=worlddata.recovered%></p>
+  </div>
+</div></div>
+<div class="col"><div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+  <div class="card-header">Deaths</div>
+  <div class="card-body">
+    <h5 class="card-title">Danger card title</h5>
+    <p class="card-text"><%=worlddata.deaths%></p>
+  </div>
+</div></div>
+ 
+ 
+
+ 
+</div>
+  <div class="row">
+    <div class="col">
       <table class="table">
   <thead>
     <tr>
@@ -24,7 +63,7 @@
       <h2>Search by country name</h2>
       <form action="/" method="POST">
       <input type="text" name="country">
-      <button type="submit">Fetch me the numbers</button>
+      <button class = "btn btn-success" type="submit">Fetch me the numbers</button>
       </form>
     </div>
   </div>

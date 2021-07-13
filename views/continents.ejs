@@ -45,10 +45,12 @@
     <div class="col">
 <h1>Countries</h1>
     
-      
-     <%for(let i=0;i<continentData.countries.length;i++){%>
-      <p><a href="country/<%=continentData.countries[i]%>"><p><%=continentData.countries[i]%></p></a></p>
+      <table class="table">
+        <%for(let i=0;i<continentData.countries.length;i++){%>
+      <tr><a href="country/<%=continentData.countries[i]%>"><p><%=continentData.countries[i]%></p></a></tr>
      <%}%>
+      </table>
+     
          
 
 

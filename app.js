@@ -10,6 +10,7 @@ app.use(express.urlencoded({ extended: true }))
 
 let data = []
 let countrydata = []
+let worlddata = []
 
 app.get('/', (req, res) => {
   var config = {
@@ -22,7 +23,6 @@ app.get('/', (req, res) => {
     .then(function (response) {
       data = response.data
       // console.log(data)
-      res.render('home', { content: data })
     })
     .catch(function (error) {
       console.log(error)
@@ -37,6 +37,21 @@ app.get('/', (req, res) => {
     .then(function (response) {
       countrydata = response.data
       // console.log(countrydata)
+    })
+    .catch(function (error) {
+      console.log(error)
+    })
+
+  var configall = {
+    method: 'get',
+    url: 'https://corona.lmao.ninja/v2/all?yesterday',
+    headers: {},
+  }
+
+  axios(configall)
+    .then(function (response) {
+      worlddata = response.data
+      res.render('home', { content: data, worlddata: worlddata })
     })
     .catch(function (error) {
       console.log(error)
